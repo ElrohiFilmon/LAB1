@@ -1,0 +1,32 @@
+
+
+/* A margin of at least 15px.
+Padding of at least 10px.
+A solid border with a color and width of your choice.
+A width of 350px and height of 200px.
+A background color to make the box visible. */
+.container{
+    margin: 15px;
+    padding: 10px;
+    border: 1px solid black;
+    width: 350px;
+    height: 200px;
+    background-color: yellowgreen;
+}
+
+/* A centered margin (use auto for horizontal centering).
+Padding of at least 5px.
+A different border style (e.g., dashed or dotted).
+A width of 250px and height of 80px.
+An outline with a color and width of your choice. */
+
+#mini-box{
+    padding: auto;
+    padding: 5px;
+    border: 1px dashed black;
+    width: 250px;
+    height: 80px;
+    outline: 1px solid black;
+    
+
+}

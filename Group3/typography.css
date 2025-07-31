@@ -1,0 +1,70 @@
+/* 
+    3. In typography.css , create:
+A universal selector to set a font family and a light background color.
+Styles for the <h1> with:
+A different font family (e.g., Georgia or serif).
+A font size (e.g., 1.8em or larger).
+Bold font weight and centered text.
+A text transformation (e.g., uppercase or capitalize).
+A color using hex or RGB.
+Styles for .description with:
+Justified text alignment.
+A text decoration (e.g., underline or overline).
+A line height (e.g., 1.5 or higher).
+A dark color for text.
+Styles for .action-link with:
+A color and no text decoration by default.
+A hover state with a different color and text decoration.
+An active state with another color.
+Styles for .skills with:
+A custom list style (e.g., circle or square).
+Margin and padding for spacing.
+List items with a font size and color, and spacing between items.
+At least two CSS comments explaining your choices.
+4. Link typography.css to typography.html using a <link> tag.
+5. Open typography.html in a browser to verify text, font, color, link, and list styles are applied correctly. */
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: white;
+}
+
+h1{
+    font-family: 'Georgia','serif';
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    text-transform: capitalize;
+    color: #000000;
+}
+
+.description{
+    justify-items: center;
+    text-decoration: underline;
+    line-height: 1.5rem;
+    color:#000000;
+
+}
+
+.action-link{
+    color: black;
+    text-decoration: none;
+    
+}
+.action-link:hover{
+    color: white;
+    background-color: grey;
+    border: 2px solid black;
+    text-decoration: none;
+
+}
+
+.skills{
+    list-style: circle;
+    margin: auto;
+    padding: 15px;
+    font-size: large;
+    color: lightblue;
+
+
+}

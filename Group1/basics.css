@@ -1,0 +1,18 @@
+*{
+    font-family: "Press Start 2P", system-ui;   
+}
+
+/* Centering a div using justify align  */
+div{
+    background-color:bisque;
+    padding: 20px;
+    display: block;
+    justify-content: center;
+    align-items: center;
+}
+/* Style for special adding margin and  responsiveness */
+#special{
+    border: 1px solid black ;
+    margin: 20px;
+    height: 100%;
+}

@@ -1,0 +1,61 @@
+/* Universal selector to set base font and body margin */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    margin: 20px;
+}
+
+/* Descendant combinator: style all paragraphs inside .main */
+.main p {
+    color: #333366;
+}
+
+/* Child combinator: style direct <h2> child of .main */
+.main > h2 {
+    color: #c0392b;
+    position: relative;
+}
+
+/* Pseudo-element: add content before <h2> with a distinct color */
+.main > h2::before {
+    content: "★ ";
+    color: #f1c40f;
+    font-size: 1.2em;
+}
+
+/* Adjacent sibling combinator: style paragraph immediately after <h2> */
+.main > h2 + p {
+    font-style: italic;
+    color: #555;
+}
+
+/* General sibling combinator: style all paragraphs after .lead */
+.lead ~ p {
+    margin-top: 24px;
+}
+
+/* Pseudo-class: style the first <span> in a <div> */
+div span:first-child {
+    font-weight: bold;
+}
+
+/* Pseudo-class: style every even <span> in a <div> */
+div span:nth-child(even) {
+    color: #16a085;
+}
+
+/* Attribute selector: style text inputs */
+input[type="text"] {
+    border: 1px solid #888;
+    padding: 6px 10px;
+    border-radius: 4px;
+}
+
+/* Attribute selector with pseudo-class: style password input on focus */
+/* This improves accessibility by providing a clear focus indicator */
+input[type="password"]:focus {
+    border: 2px solid #e67e22;
+    outline: none;
+}

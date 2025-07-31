@@ -1,0 +1,61 @@
+/* Universal selector for font and body background */
+* {
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f6fa; /* Light background for readability */
+}
+
+.banner {
+    background-image: url("https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?q=80&fm=jpg&w=1080&fit=max");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 40px 0;
+    text-align: center;
+    color: #000; /* Ensures text is visible on image */
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.banner .icon {
+    color: #ffd700; /* Gold color for icon */
+    margin-right: 10px;
+}
+
+.banner-text {
+    opacity: 0.7; /* Semi-transparent for overlay effect */
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Space between images */
+    margin: 40px 0;
+}
+
+.gallery img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid #ddd; /* Subtle border for separation */
+    border-radius: 8px;
+    transition: opacity 0.3s;
+}
+
+/* Dimmed image for visual emphasis */
+.gallery img.dimmed {
+    opacity: 0.5;
+}
+
+/* 
+    The .banner uses background properties to ensure the image covers the area and centers nicely.
+    The .gallery uses flexbox for easy alignment and spacing of images.
+*/
