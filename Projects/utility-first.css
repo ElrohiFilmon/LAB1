@@ -1,0 +1,36 @@
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Margin utilities */
+.m-1 { margin: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+
+
+/* Padding utilities */
+.p-1 { padding: 0.25rem; }
+.pt-2 { padding-top: 0.5rem; }
+
+/* Custom size utilities */
+.m-[value] { margin: var(--m-value); }
+.p-[value] { padding: var(--p-value); }
+.pt-[value] { padding: var(--p-value); }
+.c-[value] { color: var(--p-value); }
+
+
+/* Color utilities */
+.text-primary { color: #1e90ff; }
+.bg-secondary { background-color: #ff6347; }
+
+/* Responsive utilities */
+@media (min-width: 640px) {
+  .sm\:m-1 { margin: 0.25rem; }
+}
+
+
+
+/* Hover variants */
+.hover\:text-primary:hover { color: #1e90ff; }
