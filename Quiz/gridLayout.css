@@ -1,0 +1,46 @@
+
+.parent{
+    height:100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 2fr 2fr;
+    grid-template-areas: 
+    'green green green blue'
+    'pink purple grey blue'
+    'yellow yellow orange blue'
+    'red red red blue'
+    ;
+    gap: 5px;
+}
+
+.green{
+    background-color: green;
+    grid-area: green;
+}
+.blue{
+    background-color: blue;
+    grid-area: blue;
+}
+.pink{
+    background-color: pink;
+    grid-area: pink;
+}
+.purple{
+    background-color: purple;
+    grid-area: purple;
+}
+.grey{
+    background-color: grey;
+    grid-area: grey;
+}
+.orange{
+    background-color: orange;
+    grid-area: orange;
+}
+.yellow{
+    background-color: yellow;
+    grid-area: yellow;
+}
+.red{
+    background-color: red;
+    grid-area: red;
+}

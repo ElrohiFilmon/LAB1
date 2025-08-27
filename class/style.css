@@ -1,0 +1,32 @@
+h1{
+    align-content:;
+}
+
+/* Notes on flex-box and grid */
+
+/* Felx-Box
+
+align-items
+self-align
+justify-content
+flex-flow(warp and direction)
+felx-wrap
+align-content(works on multiple lines)
+flex-direction
+
+*/
+
+/* Grid 
+grid-template-columns use %,px,fr
+grid-template-rows
+grid-template(both row and col) 
+
+grid-row-start
+grid-column-start
+grid-row-end
+grid-column-end
+
+grid-column span with start/end
+grid-row span with start/end
+grid-area rs/re/cs/ce;
+*/

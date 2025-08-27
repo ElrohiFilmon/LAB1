@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+    let div1 = document.getElementById('container');
+    let spanarr = [];
+
+    function createMultiple(arr, n) {
+        for (let i = 0; i < n; i++) {
+            let span = document.createElement('span');
+            span.setAttribute('id', `span${i + 1}`);
+            span.style.fontWeight = 'bold';
+            arr.push(span);
+        }
+    }
+    createMultiple(spanarr, 3);
+
+    function appendData(spanarr) {
+        spanarr.forEach((val, i) => {
+            val.textContent = `Item ${i + 1}`;
+        });
+    }
+    appendData(spanarr);
+
+    function appendit(spanarr, div) {
+        spanarr.forEach((val) => {
+            div.appendChild(val);
+        });
+    }
+
+    appendit(spanarr, div1); // adds spans into #container
+    </script>
+</body>
+</html>

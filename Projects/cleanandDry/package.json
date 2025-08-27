@@ -1,0 +1,30 @@
+{
+  "name": "cleananddry",
+  "version": "1.0.0",
+  "description": "An application for users and buisnesses to access house to house carwash services ",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ElrohiFilmon/cleananddrycars.git"
+  },
+  "keywords": [
+    "\"clean\"",
+    "\"dry\"",
+    "\"car",
+    "wash\"",
+    "\"House",
+    "service\""
+  ],
+  "author": "Elrohi Filmon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ElrohiFilmon/cleananddrycars/issues"
+  },
+  "homepage": "https://github.com/ElrohiFilmon/cleananddrycars#readme",
+  "devDependencies": {
+    "vite": "^7.1.3"
+  }
+}

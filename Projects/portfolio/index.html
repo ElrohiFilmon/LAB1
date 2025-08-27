@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            width: 100%;
+            overflow-y: scroll;
+            background: #f8f9fa;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
+            background: rgba(255,255,255,0.8);
+            padding: 0.5rem 2rem;
+        }
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            margin-left: auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: background 0.2s, color 0.2s;
+            cursor: pointer;
+        }
+        nav a.active, nav a:hover {
+            background: #e2e6ea;
+            color: #0077b6;
+        }
+        #hero {
+            display: flex;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        #socials {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            justify-content: center;
+        }
+        #socials a {
+            color: #0077b6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        #description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+            flex: 1;
+        }
+        #description .s1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        #description .s2 {
+            font-size: 1.5rem;
+            color: #555;
+        }
+        #image img {
+            max-width: 180px;
+            border: 2px solid #0077b6;
+            border-radius: 50%;
+            height: auto;
+            display: block;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            padding: 1rem 0;
+            text-align: center;
+            background: #e2e6ea;
+            color: #333;
+            z-index: 100;
+        }
+        section {
+            display: none;
+        }
+        #hero, #home, #skills, #aboutme, #contact, #projects {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+            margin-bottom: 2rem;
+        }
+        #hero {
+            display: flex;
+        }
+        #skills ul {
+            list-style: disc inside;
+            padding-left: 1rem;
+        }
+        #contact a {
+            color: #0077b6;
+            text-decoration: none;
+        }
+        #contact a:hover {
+            text-decoration: underline;
+        }
+        .projects-container {
+            display: flex;
+            height: 400px;
+            justify-content: center;
+        }
+        .projects-container input {
+            display: none;
+        }
+        .project-card {
+            margin: 0 10px;
+            width: 80px;
+            cursor: pointer;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            border-radius: 20px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.7s ease;
+        }
+        .project-card-content {
+            display: flex;
+            padding: 12px;
+            color: white;
+            width: 100%;
+            align-items: center;
+        }
+        .project-number {
+            margin-right: 16px;
+            display: flex;
+            height: 40px;
+            width: 40px;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-weight: bold;
+        }
+        .project-info {
+            transform: translateY(10px);
+            opacity: 0;
+            transition: all 0.3s ease 0.2s;
+        }
+        .project-links {
+            margin-top: 8px;
+            display: flex;
+            gap: 8px;
+        }
+        .project-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 4px 8px;
+            background: rgba(0,0,0,0.5);
+            border-radius: 4px;
+        }
+        .project-links a:hover {
+            background: rgba(0,0,0,0.7);
+        }
+        input:checked + label {
+            width: 400px;
+        }
+        input:checked + label .project-info {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        h3.text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#hero" class="active">Home</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#aboutme">About Me</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <section id="hero">
+            <section id="socials">
+                <a href="https://instagram.com/__.tycoon__" target="_blank" title="Instagram">
+                    <span class="material-symbols-outlined">photo_camera</span> Instagram
+                </a>
+                <a href="https://t.me/elrohifilmon" target="_blank" title="Telegram">
+                    <span class="material-symbols-outlined">send</span> Telegram
+                </a>
+                <a href="tel:+1234567890" title="Call">
+                    <span class="material-symbols-outlined">call</span> +251932298171
+                </a>
+            </section>
+            <section id="description">
+                <span class="s1">I'm Elrohi Filmon</span>
+                <span class="s2">A Fullstack Software Developer</span>
+                <p>I've been developing scalable web, desktop and server applications for a decade of experience. Started my journey when I was an 8th grade student </p>
+            </section>
+            <section id="image">
+                <img src="image1.png" alt="Portfolio picture" onerror="this.onerror=null;this.src='https://via.placeholder.com/180?text=No+Image';">
+            </section>
+        </section>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to my portfolio website. Explore my skills, projects, and get to know more about me.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+                <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white" alt="C++"></a>
+                <a href="https://dart.dev/"><img src="https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white" alt="Dart"></a>
+                <a href="https://developer.mozilla.org/docs/Web/HTML"><img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"></a>
+                <a href="https://developer.mozilla.org/docs/Web/JavaScript"><img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="JavaScript"></a>
+                <a href="https://www.python.org/"><img src="https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54" alt="Python"></a>
+                <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=for-the-badge&logo=rust&logoColor=white" alt="Rust"></a>
+                <a href="https://www.typescriptlang.org/"><img src="https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript"></a>
+                <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="Bash Script"></a>
+                <a href="https://aws.amazon.com/"><img src="https://img.shields.io/badge/AWS-%23FF9900.svg?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS"></a>
+                <a href="https://opencv.org/"><img src="https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white" alt="OpenCV"></a>
+                <a href="https://expressjs.com/"><img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" alt="Express.js"></a>
+                <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi" alt="FastAPI"></a>
+                <a href="https://fastify.dev/"><img src="https://img.shields.io/badge/fastify-%23000000.svg?style=for-the-badge&logo=fastify&logoColor=white" alt="Fastify"></a>
+                <a href="https://flutter.dev/"><img src="https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white" alt="Flutter"></a>
+                <a href="https://nodejs.org/"><img src="https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white" alt="NodeJS"></a>
+                <a href="https://pnpm.io/"><img src="https://img.shields.io/badge/pnpm-%234a4a4a.svg?style=for-the-badge&logo=pnpm&logoColor=f69220" alt="PNPM"></a>
+                <a href="https://react.dev/"><img src="https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB" alt="React"></a>
+                <a href="https://svelte.dev/"><img src="https://img.shields.io/badge/svelte-%23f1413d.svg?style=for-the-badge&logo=svelte&logoColor=white" alt="Svelte"></a>
+                <a href="https://kit.svelte.dev/"><img src="https://img.shields.io/badge/sveltekit-%23ff3e00.svg?style=for-the-badge&logo=svelte&logoColor=white" alt="SvelteKit"></a>
+                <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white" alt="TailwindCSS"></a>
+                <a href="https://tauri.app/"><img src="https://img.shields.io/badge/tauri-%2324C8DB.svg?style=for-the-badge&logo=tauri&logoColor=%23FFFFFF" alt="Tauri"></a>
+                <a href="https://threejs.org/"><img src="https://img.shields.io/badge/threejs-black?style=for-the-badge&logo=three.js&logoColor=white" alt="Three.js"></a>
+                <a href="https://vitejs.dev/"><img src="https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white" alt="Vite"></a>
+                <a href="https://pocketbase.io/"><img src="https://img.shields.io/badge/pocketbase-%23b8dbe4.svg?style=for-the-badge&logo=Pocketbase&logoColor=black" alt="PocketBase"></a>
+                <a href="https://www.sqlite.org/"><img src="https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"></a>
+                <a href="https://www.mysql.com/"><img src="https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"></a>
+                <a href="https://www.microsoft.com/en-us/sql-server"><img src="https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white" alt="Microsoft SQL Server"></a>
+                <a href="https://aws.amazon.com/dynamodb/"><img src="https://img.shields.io/badge/Amazon%20DynamoDB-4053D6?style=for-the-badge&logo=Amazon%20DynamoDB&logoColor=white" alt="Amazon DynamoDB"></a>
+                <a href="https://www.gimp.org/"><img src="https://img.shields.io/badge/Gimp-657D8B?style=for-the-badge&logo=gimp&logoColor=FFFFFF" alt="Gimp"></a>
+                <a href="https://www.figma.com/"><img src="https://img.shields.io/badge/figma-%23F24E1E.svg?style=for-the-badge&logo=figma&logoColor=white" alt="Figma"></a>
+                <a href="https://inkscape.org/"><img src="https://img.shields.io/badge/Inkscape-e0e0e0?style=for-the-badge&logo=inkscape&logoColor=080A13" alt="Inkscape"></a>
+                <a href="https://www.canva.com/"><img src="https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white" alt="Canva"></a>
+                <a href="https://numpy.org/"><img src="https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy"></a>
+                <a href="https://pandas.pydata.org/"><img src="https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas"></a>
+                <a href="https://www.tensorflow.org/"><img src="https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white" alt="TensorFlow"></a>
+                <a href="https://github.com/"><img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" alt="GitHub"></a>
+                <a href="https://git-scm.com/"><img src="https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white" alt="Git"></a>
+                <a href="https://www.arduino.cc/"><img src="https://img.shields.io/badge/-Arduino-00979D?style=for-the-badge&logo=Arduino&logoColor=white" alt="Arduino"></a>
+                <a href="https://eslint.org/"><img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white" alt="ESLint"></a>
+                <a href="https://www.raspberrypi.org/"><img src="https://img.shields.io/badge/-Raspberry_Pi-C51A4A?style=for-the-badge&logo=Raspberry-Pi" alt="Raspberry Pi"></a>
+                <a href="https://developer.mozilla.org/docs/Web/CSS"><img src="https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"></a>
+            </div>
+        </section>
+        <section id="projects">
+            <h3 class="text-center">📁 My Projects</h3>
+            <div class="projects-container">
+                <input type="radio" name="project" id="p1" checked>
+                <label for="p1" class="project-card" style="background-image: url('image3.png');">
+                    <div class="project-card-content">
+                        <div class="project-number">1</div>
+                        <div class="project-info">
+                            <h4 class="uppercase">Sarah's System</h4>
+                            <p class="text-sm">Simple Svelte-kit and tauri based fullstack website and Admin desktop app</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ElrohiFilmon/Sarahs-frontend" target="_blank">GitHub</a>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="project" id="p2">
+                <label for="p2" class="project-card" style="background-image: url('image4.png');">
+                    <div class="project-card-content">
+                        <div class="project-number">2</div>
+                        <div class="project-info">
+                            <h4 class="uppercase">Gamefiy Learning</h4>
+                            <p class="text-sm">Learn Programming in a fun way with XP and leaderboards</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ElrohiFilmon/GamefiyLearning" target="_blank">GitHub</a>
+                                <a href="https://gamefiy-learning.vercel.app/" target="_blank">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="radio" name="project" id="p3">
+                <label for="p3" class="project-card" style="background-image: url('image2.png');">
+                    <div class="project-card-content">
+                        <div class="project-number">3</div>
+                        <div class="project-info">
+                            <h4 class="uppercase">Fanos Crypto</h4>
+                            <p class="text-sm">A payment processing system</p>
+                            <div class="project-links">
+                                <a href="https://github.com/ElrohiFilmon/fanospay" target="_blank">GitHub</a>
+                                <a href="https://fanospay.vercel.app/" target="_blank">Live Site</a>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section id="aboutme">
+            <h2>About Me</h2>
+            <p>Hi, I'm Elrohi Filmon, a passionate developer with experience in web technologies and software engineering.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: elrohi@proton.me</p>
+            <p>LinkedIn: <a href="#">https://linkedin.com/in/elrohi-filmon-75457a211</a></p>
+        </section>
+    </main>
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+    </footer>
+    <script>
+        const navLinks = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('main > section');
+
+        function showSection(id) {
+            sections.forEach(sec => {
+                if (sec.id === 'hero') {
+                    sec.style.display = (id === 'hero' || id === 'home') ? 'flex' : 'none';
+                } else {
+                    sec.style.display = (sec.id === id) ? 'block' : 'none';
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+            });
+        }
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = this.getAttribute('href').replace('#', '');
+                showSection(id);
+                history.replaceState(null, '', `#${id}`);
+            });
+        });
+
+        window.addEventListener('DOMContentLoaded', () => {
+            let hash = location.hash.replace('#', '');
+            if (!hash || !document.getElementById(hash)) hash = 'hero';
+            showSection(hash);
+        });
+
+        window.addEventListener('hashchange', () => {
+            let hash = location.hash.replace('#', '');
+            if (!hash || !document.getElementById(hash)) hash = 'hero';
+            showSection(hash);
+        });
+    </script>
+</body>
+</html>
